@@ -1,5 +1,6 @@
 var formulario = function(){
 	$("#tweet").submit(agregarTweet);
+	$("#mensaje").keyup(validarTexto);
 };
 
 var agregarTweet = function(e){
@@ -19,6 +20,14 @@ var agregarTweet = function(e){
 		// Borrar contenido de textarea
 		$("#mensaje").val("");
 
+};
+
+var validarTexto = function(){
+	if($(this).val().trim().length > 0){
+		$("#publicarTweet").removeAttr("disabled");
+	} else {
+		$("#publicarTweet").attr("disabled", true);
+	}
 };
 
 $(document).ready(formulario);
