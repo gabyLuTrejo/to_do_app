@@ -25,10 +25,18 @@ var agregarTweet = function(e){
 var validarTexto = function(){
 	if($(this).val().trim().length > 0){
 		$("#publicarTweet").removeAttr("disabled");
-		$("#caracteres").text($(this).val().length)
+		conteoCaracteres();		
 	} else {
 		$("#publicarTweet").attr("disabled", true);
 	}
+
+};
+
+var conteoCaracteres = function(){
+	var $caracteres = $("#caracteres").text(140-$("#mensaje").val().trim().length);
+		if($caracteres <= 0){
+			$("#caracteres").text("-" + $caracteres + $("#mensaje").val().trim().length);
+		}
 };
 
 $(document).ready(formulario);
