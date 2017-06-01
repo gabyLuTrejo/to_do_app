@@ -25,6 +25,7 @@ var agregarTweet = function(e){
 var validarTexto = function(){
 	if($(this).val().trim().length > 0){
 		$("#publicarTweet").removeAttr("disabled");
+		$("#caracteres").text($(this).val().length)
 	} else {
 		$("#publicarTweet").attr("disabled", true);
 	}
