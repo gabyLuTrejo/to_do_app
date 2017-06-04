@@ -25,7 +25,7 @@ var agregarTweet = function(e){
 
 var validarTexto = function(){
     var $caracteres = conteoCaracteres();    
-	if($caracteres < 140){
+	if($caracteres < 140 && $caracteres > -1){
 		$("#publicarTweet").removeAttr("disabled");
 				
 	} else {
